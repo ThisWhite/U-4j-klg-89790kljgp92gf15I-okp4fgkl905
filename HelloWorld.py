@@ -1,12 +1,20 @@
-class Calc:
-    def add(self, x, y):
-        return x + y
+import unittest
  
-    def minus(self, x, y):
-        return x - y
+from app.calc import Calc
  
-    def multiply(self, x, y):
-        return x * y
+sut = Calc()
+class CalcTestCase(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(sut.add(1, 2), 3)
  
-    def divide(self, x, y):
-        return x / y
+    def test_minus(self):
+        self.assertEqual(sut.minus(3, 2), 1)
+ 
+    def test_multiply(self):
+        self.assertEqual(sut.multiply(1, 2), 2)
+ 
+    def test_divide(self):
+        self.assertEqual(sut.divide(8, 2), 4)
+ 
+    def foo(self):
+        print("foo!!")
